@@ -1,0 +1,29 @@
+<h3>Welcome to URL Shortner</h3>
+
+<% if @link.present? %>
+  <p>Shortend Link: <%= link_to @link.short, @link.short %></p>
+<% end %>
+<%= link_to 'Shorten URL', new_link_path %>
+<hr>
+<h4 class="text-center">Frequently accessed URLs</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Long URL</th>
+      <th>Short URL</th>
+      <th>Visits</th>
+    </tr>
+    <t>
+  </thead>
+  <tbody>
+    <% @frequent_links.each do |fl| %>
+      <tr>
+        <td><%= fl.title %></td>
+        <td><%= fl.url %></td>
+        <td><%= fl.short %></td>
+        <td><%= fl.visited %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
