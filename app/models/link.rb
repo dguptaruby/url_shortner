@@ -15,6 +15,7 @@ class Link < ApplicationRecord
     link.slug = SecureRandom.uuid[0..5]
     if link.save
       # run a background job here to get the title
+      TitleFetcherJob.perform_later(link.id)
       return link
     end
     Link.generate_link(url)
