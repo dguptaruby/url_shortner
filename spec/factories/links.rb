@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :link do
-    title { "MyString" }
-    url { "MyString" }
-    slug { "MyString" }
-    visited { "MyString" }
+    title { 'Example Site' }
+    url { 'http://example.com' }
+    slug { 'abc123' }
+    visited { 0 }
   end
 end
